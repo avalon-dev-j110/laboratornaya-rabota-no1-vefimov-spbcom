@@ -1,40 +1,58 @@
 package ru.avalon.java.dev.j10.labs.models;
 
-/**
- * Представление о паспортных данных человека.
- * <p>
- * Паспортные данные должны включать:
- * <ol>
- *  <li> серию и номер документа;
- *  <li> имя;
- *  <li> фамилию;
- *  <li> отчество;
- *  <li> второе имя;
- *  <li> день рождения;
- *  <li> дату выдачи;
- *  <li> орган, выдавший документ.
- * </ol>
- */
-class Passport {
+import ru.avalon.java.dev.j10.labs.commons.Address;
 
-    /*
-     * TODO(Студент): Закончить определение класса.
-     *
-     * 1. Объявить атрибуты класса.
-     *
-     * 2. Определить необходимые методы класса. Подумайте о
-     *    том, какие методы должны существовать в классе,
-     *    чтобы обеспечивать получение всей необходимой
-     *    информации о состоянии объектов данного класса.
-     *    Все ли поля обязательно будут проинициализированы
-     *    при создании экземпляра?
-     *
-     * 3. Создайте все необходимые конструкторы класса.
-     *
-     * 4. Помните о возможности существования перегруженных
-     *    конструкторов.
-     *
-     * 5. Обеспечте возможность использования класса за
-     *    пределами пакета.
-     */
+public class Passport {
+    private long serial;
+    private String firstName;
+    private String lastName;
+    private String surName;
+    private String secondName;
+    private String birthday;
+    private String issueDate;
+    private String issuedBy;
+    private Address address;
+
+    public Passport(String lastName, String firstName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    public Passport(Address address, String lastName, String firstName, String surName, String secondName) {
+        this.address = address;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.surName = surName;
+        this.secondName = secondName;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+    public String getSurName() {
+        return surName;
+    }
+    public String getSecondName() {
+        return secondName;
+    }
+    public Address getAddress() {
+        return address;
+    }
+   /* public void setAddress(Address address) {
+        this.address = address;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    } */
 }
